@@ -1,6 +1,5 @@
 #!/bin/bash
 echo "Clearing destination and copying Windows binaries..."
-mkdir out
 rm -rf out/windows && mkdir out/windows
 rm out/robopaint-win.zip
 cp nw-bin/windows/* out/windows
