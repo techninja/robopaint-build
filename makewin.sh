@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "Clearing destination and copying Windows binaries..."
+mkdir out
 rm -rf out/windows && mkdir out/windows
 rm out/robopaint-win.zip
-rm -rf tmp/ && mkdir tmp
 cp nw-bin/windows/* out/windows
 
 echo "Pulling latest RoboPaint master branch..."
