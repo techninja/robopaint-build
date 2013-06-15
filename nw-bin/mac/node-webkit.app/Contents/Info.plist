@@ -5,12 +5,12 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>node-webkit</string>
+	<string>RoboPaint</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
 			<key>CFBundleTypeIconFile</key>
-			<string>nw.icns</string>
+			<string>robopaint.icns</string>
 			<key>CFBundleTypeName</key>
 			<string>node-webkit App</string>
 			<key>CFBundleTypeRole</key>
@@ -19,7 +19,7 @@
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.intel.nw.app</string>
+				<string>com.watercolorbot.robopaint.app</string>
 			</array>
 		</dict>
 		<dict>
@@ -38,9 +38,9 @@
 	<key>CFBundleExecutable</key>
 	<string>node-webkit</string>
 	<key>CFBundleIconFile</key>
-	<string>nw.icns</string>
+	<string>robopaint.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.intel.nw</string>
+	<string>com.watercolorbot.robopaint.app</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -71,22 +71,11 @@
 			<key>UTTypeDescription</key>
 			<string>node-webkit App</string>
 			<key>UTTypeIconFile</key>
-			<string>nw.icns</string>
+			<string>robopaint.icns</string>
 			<key>UTTypeIdentifier</key>
-			<string>com.intel.nw.app</string>
+			<string>com.watercolorbot.robopaint.app</string>
 			<key>UTTypeReferenceURL</key>
-			<string>https://github.com/rogerwang/node-webkit/wiki/How-to-package-and-distribute-your-apps</string>
-			<key>UTTypeTagSpecification</key>
-			<dict>
-				<key>com.apple.ostype</key>
-				<string>node-webkit</string>
-				<key>public.filename-extension</key>
-				<array>
-					<string>nw</string>
-				</array>
-				<key>public.mime-type</key>
-				<string>application/x-node-webkit-app</string>
-			</dict>
+			<string>http://watercolorbot.com</string>
 		</dict>
 	</array>
 </dict>
