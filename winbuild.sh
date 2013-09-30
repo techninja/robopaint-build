@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Clearing destination and copying Windows binaries..."
 rm -rf out/windows && mkdir out/windows
-rm out/robopaint-win.zip
+rm out/Install_RoboPaint*.exe
 cp nw-bin/windows/* out/windows
 
 echo "Pulling latest RoboPaint master branch..."
@@ -28,16 +28,12 @@ cd ../../../
 echo "Combining NW executable with Windows exe..."
 cat nw-bin/windows/nw.exe out/windows/robopaint.nw > out/windows/nw.exe
 
-echo "Cleaning up folder to zip..."
-rm out/windows/cncserver.zip
-rm -rf out/windows/robopaint
-rm out/windows/robopaint.nw
+echo "Compiling final NSIS installer file..."
+cd installers/windows
+makensis -V1 -DVERSION=0.6.1 robopaint.nsi
+cd ../../
 
-echo "Outputting final ZIP..."
-mv out/windows out/robopaint
-cd out
-zip -mqr robopaint-win.zip robopaint
-cd ..
+echo "Cleaning up..."
+rm -rf out/windows
 
-echo "Done! Final Windows release file build complete."
-
+echo "Done! Final Windows release install file completed."

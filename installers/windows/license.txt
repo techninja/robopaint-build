@@ -1,0 +1,5 @@
+﻿Hey there! We'll make this short:
+
+RoboPaint is Open Source Software™, and distributed under the MIT license. For all general inquiries, check out WaterColorBot.com, and for more information on bugs, features, latest downloads and more, check out github.com/techninja/robopaint.
+
+Thanks for reading this, and don't forget: Have a great day and get out there and make something!
