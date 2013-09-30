@@ -22,6 +22,14 @@ echo "Copying over CNC server compiled Mac node modules..."
 mkdir out/mac/robopaint/node_modules/cncserver/node_modules
 cp -R node_modules/mac/* out/mac/robopaint/node_modules/cncserver/node_modules
 
+echo "GO on a diet! Removing extra fat from build..."
+rm -rf out/mac/robopaint/resources/edit/
+rm -rf out/mac/robopaint/resources/method-editor/build/
+rm -rf out/mac/robopaint/resources/method-editor/docs/
+rm -rf out/mac/robopaint/resources/method-editor/method-draw/
+rm -rf out/mac/robopaint/resources/method-editor/test/
+
+
 echo "Moving final Robopaint NW files into Mac app..."
 mv out/mac/robopaint/ out/mac/RoboPaint.app/Contents/Resources/app.nw/
 rm out/mac/cncserver.zip
@@ -41,7 +49,7 @@ sudo mv -v out/mac/RoboPaint.app out/mac/temp/ &&
 echo "Unmounting dmg..."
 sudo umount out/mac/temp &&
 
-echo "Cleaning up workspace..."
+#echo "Cleaning up workspace..."
 rm -rf out/mac
 
 echo "Done! Final Mac release file build complete."
