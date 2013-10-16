@@ -7,7 +7,7 @@ cp -R nw-bin/mac10.6/* out/mac10.6
 mv out/mac10.6/node-webkit.app out/mac10.6/RoboPaint.app
 
 echo "Pulling latest RoboPaint master branch..."
-wget https://github.com/techninja/robopaint/archive/master.zip -qO out/mac10.6/robopaint.zip
+wget https://github.com/evil-mad/robopaint/archive/master.zip -qO out/mac10.6/robopaint.zip
 unzip -q out/mac10.6/robopaint.zip -d out/mac10.6
 rm out/mac10.6/robopaint.zip
 mv out/mac10.6/robopaint-master out/mac10.6/robopaint

@@ -5,7 +5,7 @@ rm out/Install_RoboPaint*.exe
 cp nw-bin/windows/* out/windows
 
 echo "Pulling latest RoboPaint master branch..."
-wget https://github.com/techninja/robopaint/archive/master.zip -qO out/windows/robopaint.zip
+wget https://github.com/evil-mad/robopaint/archive/master.zip -qO out/windows/robopaint.zip
 unzip -q out/windows/robopaint.zip -d out/windows
 rm out/windows/robopaint.zip
 mv out/windows/robopaint-master out/windows/robopaint

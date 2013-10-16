@@ -5,7 +5,7 @@ rm out/robopaint-lin.zip
 cp nw-bin/linux/* out/linux
 
 echo "Pulling latest RoboPaint master branch..."
-wget https://github.com/techninja/robopaint/archive/master.zip -qO out/linux/robopaint.zip
+wget https://github.com/evil-mad/robopaint/archive/master.zip -qO out/linux/robopaint.zip
 unzip -q out/linux/robopaint.zip -d out/linux
 rm out/linux/robopaint.zip
 mv out/linux/robopaint-master out/linux/robopaint
