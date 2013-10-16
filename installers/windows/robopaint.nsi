@@ -78,8 +78,12 @@ Section "EBB Driver" SecDriver
 
   File "EBB_inf\mchpcdc.cat"
   File "EBB_inf\mchpcdc.inf"
+  File "EBB_inf\DIFxAPI_x64.dll"
+  File "EBB_inf\DIFxAPI_x86.dll"
+  File "EBB_inf\ReadMe.txt"
+  File "EBB_inf\USBDriverInstaller.exe"
 
-  ExecWait 'pnputil -i -a "$INSTDIR\Driver\mchpcdc.inf"'
+  ExecWait '"$INSTDIR\Driver\USBDriverInstaller.exe" -auto'
 SectionEnd
 
 
@@ -131,9 +135,3 @@ Section "Uninstall"
   DeleteRegKey /ifempty HKCU "Software\RoboPaint"
 SectionEnd
 
-Function .onInit
-  ${IfNot} ${AtLeastWinVista}
-    MessageBox MB_OK "Sorry, Vista and above required!"
-    Quit
-  ${EndIf}
-FunctionEnd
