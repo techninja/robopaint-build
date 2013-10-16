@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Clearing destination and copying Mac binaries..."
 rm -rf out/mac10.6 && mkdir out/mac10.6
-rm out/robopaint-mac10.6.dmg
+rm out/RoboPaint-Mac10.6-*.dmg
 rm -rf tmp/ && mkdir tmp
 cp -R nw-bin/mac10.6/* out/mac10.6
 mv out/mac10.6/node-webkit.app out/mac10.6/RoboPaint.app
@@ -36,13 +36,13 @@ rm out/mac10.6/cncserver.zip
 
 echo "Outputting final DMG with included app file..."
 echo "Creating dmg..."
-dd if=/dev/zero of=out/robopaint-mac10.6.dmg bs=1M count=80 &&
+dd if=/dev/zero of=out/RoboPaint-Mac10.6-v$1.dmg bs=1M count=80 &&
 echo "Formatting dmg..."
-hformat -l RoboPaint out/robopaint-mac10.6.dmg &&
+hformat -l RoboPaint out/RoboPaint-Mac10.6-v$1.dmg &&
 echo "Creating mount point..."
 mkdir out/mac10.6/temp &&
 echo "Mounting dmg..."
-sudo mount -t hfs -o loop out/robopaint-mac10.6.dmg out/mac10.6/temp/ &&
+sudo mount -t hfs -o loop out/RoboPaint-Mac10.6-v$1.dmg out/mac10.6/temp/ &&
 echo "Moving files..."
 sudo mv -v out/mac10.6/RoboPaint.app out/mac10.6/temp/ &&
 echo "Unmounting dmg..."

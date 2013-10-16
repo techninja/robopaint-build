@@ -38,7 +38,7 @@ mv out/linux/nw out/linux/robopaint
 echo "Outputting final ZIP..."
 mv out/linux out/robopaint
 cd out
-zip -mqr robopaint-lin.zip robopaint
+zip -mqr robopaint-linux-v$1.zip robopaint
 cd ..
 
 echo "Done! Final Linux release file build complete."

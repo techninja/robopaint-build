@@ -14,7 +14,7 @@
 
   ; Name and file
   Name "RoboPaint ${VERSION}"
-  OutFile "..\..\out\Install_RoboPaint-${VERSION}.exe"
+  OutFile "..\..\out\Install_RoboPaint-Win-v${VERSION}.exe"
 
   ; Default installation folder
   InstallDir "$PROGRAMFILES\RoboPaint"

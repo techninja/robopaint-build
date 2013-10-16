@@ -30,7 +30,7 @@ cat nw-bin/windows/nw.exe out/windows/robopaint.nw > out/windows/nw.exe
 
 echo "Compiling final NSIS installer file..."
 cd installers/windows
-makensis -V1 -DVERSION=0.6.1 robopaint.nsi
+makensis -V1 -DVERSION=$1 robopaint.nsi
 cd ../../
 
 echo "Cleaning up..."
