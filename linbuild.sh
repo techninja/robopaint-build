@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Clearing destination and copying Linux binaries..."
 rm -rf out/linux && mkdir out/linux
-rm out/robopaint-lin.zip
+rm out/robopaint-linux*.zip
 cp nw-bin/linux/* out/linux
 
 echo "Pulling latest RoboPaint master branch..."
