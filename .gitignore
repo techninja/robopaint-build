@@ -1,2 +1,4 @@
 out/*.zip
 out/*.dmg
+out/*.exe
+.deps
