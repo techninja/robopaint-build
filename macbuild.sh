@@ -37,7 +37,7 @@ rm out/mac/cncserver.zip
 
 echo "Outputting final DMG with included app file..."
 echo "Creating dmg..."
-dd if=/dev/zero of=out/RoboPaint-Mac-v$1.dmg bs=1M count=82 &&
+dd if=/dev/zero of=out/RoboPaint-Mac-v$1.dmg bs=1M count=84 &&
 echo "Formatting dmg..."
 hformat -l RoboPaint out/RoboPaint-Mac-v$1.dmg &&
 echo "Creating mount point..."
