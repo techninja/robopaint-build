@@ -1,4 +1,11 @@
 out/*.zip
 out/*.dmg
 out/*.exe
+out/windows/*
+out/linux/*
+out/mac/*
+out/prebuild/*
+
 .deps
+
+/node_modules/*
