@@ -8,6 +8,7 @@
 
   !include "MUI2.nsh"
   !include "WinVer.nsh"
+  !addplugindir "plugins"
 
 ; --------------------------------
 ; General
@@ -54,13 +55,23 @@
 Section "RoboPaint" SecMain
   SetOutPath "$INSTDIR"
 
-  File "..\..\out\windows\ffmpegsumo.dll"
-  File "..\..\out\windows\icudt.dll"
+  ; Copy main NW executable files
+  File "..\..\out\windows\icudtl.dat"
   File "..\..\out\windows\libEGL.dll"
   File "..\..\out\windows\libGLESv2.dll"
   File "..\..\out\windows\nw.exe"
   File "..\..\out\windows\nw.pak"
   File "..\..\out\windows\ffmpegsumo.dll"
+
+  ; Copy RoboPaint application files
+  File "..\..\out\windows\package.json"
+  File "..\..\out\windows\README.md"
+  File /r "..\..\out\windows\resources"
+  File /r "..\..\out\windows\node_modules"
+
+  ; Set permissions on dirs to allow write access
+  AccessControl::GrantOnFile "$INSTDIR\node_modules" "(BU)" "FullAccess"
+  AccessControl::GrantOnFile "$INSTDIR\resources" "(BU)" "FullAccess"
 
   ; Store installation folder
   WriteRegStr HKCU "Software\RoboPaint" "" $INSTDIR
@@ -115,12 +126,17 @@ SectionEnd
 Section "Uninstall"
   Delete "$INSTDIR\Uninstall.exe"
   Delete "$INSTDIR\ffmpegsumo.dll"
-  Delete "$INSTDIR\icudt.dll"
+  Delete "$INSTDIR\icudtl.dat"
   Delete "$INSTDIR\libEGL.dll"
   Delete "$INSTDIR\libGLESv2.dll"
   Delete "$INSTDIR\nw.exe"
   Delete "$INSTDIR\nw.pak"
   Delete "$INSTDIR\ffmpegsumo.dll"
+
+  Delete "$INSTDIR\package.json"
+  Delete "$INSTDIR\README.md"
+  RMDir "$INSTDIR\node_modules"
+  RMDir "$INSTDIR\resources"
 
   Delete "$INSTDIR\Driver\mchpcdc.cat"
   Delete "$INSTDIR\Driver\mchpcdc.inf"
