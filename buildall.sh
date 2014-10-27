@@ -7,6 +7,6 @@ fi
 
 sudo test
 ./macbuild.sh $1
-./mac10.6build.sh $1
+#./mac10.6build.sh $1
 ./winbuild.sh $1
 ./linbuild.sh $1
