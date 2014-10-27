@@ -11,7 +11,7 @@ cp -R out/prebuild/robopaint out/mac/RoboPaint.app/Contents/Resources/app.nw/
 
 echo "Outputting final DMG with included app file..."
 echo "Creating dmg..."
-dd if=/dev/zero of=out/RoboPaint-Mac-v$1.dmg bs=1M count=84 &&
+dd if=/dev/zero of=out/RoboPaint-Mac-v$1.dmg bs=1M count=105 &&
 echo "Formatting dmg..."
 hformat -l RoboPaint out/RoboPaint-Mac-v$1.dmg &&
 echo "Creating mount point..."
