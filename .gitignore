@@ -6,6 +6,8 @@ out/linux/*
 out/mac/*
 out/prebuild/*
 
+installers/windows/robopaint_i18n.nsi
+
 .deps
 
 /node_modules/*
