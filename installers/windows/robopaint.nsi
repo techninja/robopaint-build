@@ -8,6 +8,7 @@
 
   !include "MUI2.nsh"
   !include "WinVer.nsh"
+  !include "getclean.nsh"
   !addplugindir "plugins"
 
 ; --------------------------------
@@ -75,6 +76,9 @@
 
 Section "RoboPaint" SecMain
   SetOutPath "$INSTDIR"
+
+  ; Clear out the install directory before copy in the new files
+  !insertmacro RemoveFilesAndSubDirs "$INSTDIR"
 
   ; Copy main NW executable files
   File "..\..\out\windows\icudtl.dat"
