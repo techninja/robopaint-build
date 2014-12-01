@@ -1,0 +1,31 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: RoboPaint Install 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-11-30 14:32\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+
+#. DESC_SecMain
+#: robopaint.nsi:112
+msgid ""
+"Installs all the main files for RoboPaint and makes a desktop shortcut!"
+msgstr ""
+
+#. DESC_SecDriver
+#: robopaint.nsi:113
+msgid "The driver file for the EBB board on the WaterColorBot."
+msgstr ""
+
+#. DESC_SecSM
+#: robopaint.nsi:114
+msgid ""
+"Creates a Start Menu folder with handy shortcuts for Robopaint and "
+"Uninstall."
+msgstr ""

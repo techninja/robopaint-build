@@ -7,9 +7,13 @@ cp nw-bin/windows/* out/windows
 echo "Adding prebuilt RoboPaint files to folder..."
 cp -R out/prebuild/robopaint/* out/windows/
 
+echo "Merging in languages for NSIS file from .po files..."
+cd installers/windows/i18n
+./strings_merge.sh
+
 echo "Compiling final NSIS installer file..."
-cd installers/windows
-makensis -V1 -DVERSION=$1 robopaint.nsi
+cd ../
+makensis -V1 -DVERSION=$1 robopaint_i18n.nsi
 cd ../../
 
 echo "Cleaning up..."

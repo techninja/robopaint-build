@@ -33,6 +33,17 @@
 
   !define MUI_ABORTWARNING
 
+  ;Show all languages, despite user's codepage
+  !define MUI_LANGDLL_ALLLANGUAGES
+
+;--------------------------------
+;Language Selection Dialog Settings
+
+  ;Remember the installer language
+  !define MUI_LANGDLL_REGISTRY_ROOT "HKCU"
+  !define MUI_LANGDLL_REGISTRY_KEY "Software\RoboPaint"
+  !define MUI_LANGDLL_REGISTRY_VALUENAME "Installer Language"
+
 ; --------------------------------
 ; Pages
 
@@ -48,6 +59,16 @@
 ; Languages
 
   !insertmacro MUI_LANGUAGE "English"
+  ;@INSERT_TRANSLATIONS@
+
+;--------------------------------
+;Reserve Files
+
+  ;If you are using solid compression, files that are required before
+  ;the actual installation should be stored first in the data block,
+  ;because this will make your installer start faster.
+
+  !insertmacro MUI_RESERVEFILE_LANGDLL
 
 ; --------------------------------
 ; Installer Sections
@@ -151,3 +172,9 @@ Section "Uninstall"
   DeleteRegKey /ifempty HKCU "Software\RoboPaint"
 SectionEnd
 
+;--------------------------------
+;Uninstaller Functions
+
+Function un.onInit
+  !insertmacro MUI_UNGETLANGUAGE
+FunctionEnd
