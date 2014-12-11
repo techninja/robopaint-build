@@ -19,6 +19,8 @@ rm -rf resources/modes/edit/method-editor/build/
 rm -rf resources/modes/edit/method-editor/docs/
 rm -rf resources/modes/edit/method-editor/method-draw/
 rm -rf resources/modes/edit/method-editor/test/
+rm -rf node_modules/cncserver/node_modules/serialport/build/Release
+rm -rf node_modules/cncserver/node_modules/serialport/build/serialport
 
 cd ../../../
 
