@@ -13,7 +13,7 @@ cd installers/windows/i18n
 
 echo "Compiling final NSIS installer file..."
 cd ../
-makensis -V1 -DVERSION=$1 robopaint_i18n.nsi
+makensis -V4 -DVERSION=$1 robopaint_i18n.nsi
 cd ../../
 
 echo "Cleaning up..."
