@@ -84,6 +84,8 @@ Section "RoboPaint" SecMain
   File "..\..\out\windows\icudtl.dat"
   File "..\..\out\windows\libEGL.dll"
   File "..\..\out\windows\libGLESv2.dll"
+  File "..\..\out\windows\d3dcompiler_46.dll"
+  File "..\..\out\windows\pdf.dll"
   File "..\..\out\windows\nw.exe"
   File "..\..\out\windows\nw.pak"
   File "..\..\out\windows\ffmpegsumo.dll"
