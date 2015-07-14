@@ -5,6 +5,7 @@ out/windows/*
 out/linux/*
 out/mac/*
 out/prebuild/*
+*.DS_Store
 
 installers/windows/robopaint_i18n.nsi
 
