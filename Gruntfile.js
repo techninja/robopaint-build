@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
   // Electron build version
-  var electronVer = '0.29.2';
+  var electronVer = '0.30.0';
 
   // Project configuration.
   grunt.initConfig({
@@ -18,7 +18,8 @@ module.exports = function(grunt) {
           icon: 'resources/mac/app.icns',
           version: electronVer,
           platform: 'darwin',
-          arch: 'x64'
+          arch: 'x64',
+          overwrite: true
         }
       },
       winbuild: {
@@ -29,7 +30,8 @@ module.exports = function(grunt) {
           icon: 'resources/win/app.ico',
           version: electronVer,
           platform: 'win32',
-          arch: 'x64'
+          arch: 'x64',
+          overwrite: true
         }
       },
       linbuild: {
@@ -40,7 +42,8 @@ module.exports = function(grunt) {
           icon: 'resources/app.png',
           version: electronVer,
           platform: 'linux',
-          arch: 'x64'
+          arch: 'x64',
+          overwrite: true
         }
       }
     },
