@@ -14,13 +14,17 @@ module.exports = function(grunt) {
   grunt.registerTask('pre-build', 'Fetch files for RP build.', function(){
     try {
       if (fs.stat('out/prebuild').ctime.getTime() >  now.getTime() - ageIgnore) {
-        log('Pre-build looks less than an hour old, ignoring. Delete out/prebuild to force.')
+        log('Pre-build looks less than an hour old, ignoring. Run pre-build-force to ignore.')
         return true;
       }
     } catch(e) {
       // We don't really care if this check fails, it'll be cleared out anyways.
     }
 
+    grunt.task.run('pre-build-force');
+  });
+
+  grunt.registerTask('pre-build-force', 'Fetch files for RP build.', function(){
     log('Clearing destination: ./out/prebuild');
     fs.rm('out/prebuild');
     fs.mkdir('out/prebuild');
