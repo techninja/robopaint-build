@@ -17,7 +17,7 @@ module.exports = function(grunt) {
     log('Changing windows executable icon...');
     var changeIcon = 'wine ~/.wine/drive_c/utils/ResHacker/ResourceHacker.exe';
     changeIcon+= ' -addoverwrite "RoboPaint.exe,robopaint.exe,..\..\resources\win\app.ico,ICONGROUP,MAINICON,0"';
-    log(fs.run('cd out/Robopaint-win32-x64 && ' + changeIcon));
+    log(fs.run('cd out/RoboPaint-win32-x64 && ' + changeIcon));
   });
 
   grunt.registerTask('build-mac', 'Build the release application for OS X.', function(){
