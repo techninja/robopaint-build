@@ -76,6 +76,40 @@ module.exports = function(grunt) {
     },
     run: function(cmd, options) {
       return sync(cmd, options);
+    },
+    spawn: function(options, callback) {
+      var childProcess, error, proc, stderr, stdout;
+      childProcess = require('child_process');
+      stdout = [];
+      stderr = [];
+      error = null;
+      proc = childProcess.spawn(options.cmd, options.args, options.opts);
+      proc.stdout.on('data', function(data) {
+        return stdout.push(data.toString());
+      });
+      proc.stderr.on('data', function(data) {
+        return stderr.push(data.toString());
+      });
+      proc.on('error', function(processError) {
+        return error != null ? error : error = processError;
+      });
+      return proc.on('close', function(exitCode, signal) {
+        var results;
+        if (exitCode !== 0) {
+          if (error == null) {
+            error = new Error(signal);
+          }
+        }
+        results = {
+          stderr: stderr.join(''),
+          stdout: stdout.join(''),
+          code: exitCode
+        };
+        if (exitCode !== 0) {
+          grunt.log.error(results.stderr);
+        }
+        return callback(error, results, exitCode);
+      });
     }
   };
 };

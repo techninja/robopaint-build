@@ -4,11 +4,12 @@
   "license": "MIT",
   "author": "techninja",
   "dependencies": {
+    "fs-plus": "2.x",
     "grunt": "~0.4.5",
     "grunt-cli": "~0.1.13",
     "grunt-electron": "2.x",
     "grunt-electron-installer": "~0.33.0",
-    "fs-plus": "2.x"
+    "underscore-plus": "^1.6.6"
   },
   "repository": {
     "type": "git",
