@@ -7,6 +7,7 @@ module.exports = function(grunt) {
 See more about the WaterColorBot @ http://watercolorbot.com or\n\
 Fork & improve the project @ https://github.com/evil-mad/robopaint";
   var appTags = 'GNOME;GTK;Arts;SVG';
+  var version = '0.9.6'; // TODO: Load this from the package file
 
    // Project configuration.
   grunt.initConfig({
@@ -62,6 +63,22 @@ Fork & improve the project @ https://github.com/evil-mad/robopaint";
         }
       }
     },
+    appdmg: {
+      options: {
+        basepath: 'out/RoboPaint-darwin-x64',
+        title: 'RoboPaint!',
+        icon: 'resources/mac/app.icns',
+        background: 'resources/mac/dmg_back.png',
+        'icon-size': 80,
+        contents: [
+          {x: 448, y: 344, type: 'link', path: '/Applications'},
+          {x: 192, y: 344, type: 'file', path: 'RoboPaint.app'}
+        ]
+      },
+      target: {
+        dest: 'out/RoboPaintMac_v'+version+'.dmg'
+      }
+    }
     'create-windows-installer': {
       appDirectory: 'out/Robopaint-win32-x64',
       outputDirectory: 'out/winstall/',
