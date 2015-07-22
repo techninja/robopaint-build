@@ -30,7 +30,7 @@ module.exports = function(grunt) {
     fs.mkdir('out/prebuild');
 
     log('Extracting and preparing latest RoboPaint from branch: ' + branch);
-      log(fs.run('wget ' + conf('rpbuild.repo') + '/archive/' + branch + '.zip -qO out/prebuild/robopaint.zip'));
+      log(fs.run('curl ' + conf('rpbuild.repo').replace('github', 'codeload.github') + '/zip/' + branch + ' -so out/prebuild/robopaint.zip'));
       log(fs.run('unzip -q out/prebuild/robopaint.zip -d out/prebuild'));
       fs.rm('out/prebuild/robopaint.zip');
       fs.mv('out/prebuild/robopaint-' + branch, 'out/prebuild/robopaint');

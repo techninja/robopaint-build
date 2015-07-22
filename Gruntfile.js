@@ -78,7 +78,7 @@ Fork & improve the project @ https://github.com/evil-mad/robopaint";
       target: {
         dest: 'out/RoboPaintMac_v'+version+'.dmg'
       }
-    }
+    },
     'create-windows-installer': {
       appDirectory: 'out/Robopaint-win32-x64',
       outputDirectory: 'out/winstall/',
