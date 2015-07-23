@@ -34,7 +34,7 @@ module.exports = function(grunt) {
       log(fs.run('unzip -q out/prebuild/robopaint.zip -d out/prebuild'));
       fs.rm('out/prebuild/robopaint.zip');
       fs.mv('out/prebuild/robopaint-' + branch, 'out/prebuild/robopaint');
-      log(fs.run('sed -i \'s/"stage": "development"/"stage": "release"/g\' out/prebuild/robopaint/package.json'));
+      log(fs.run('sed -i -e \'s/"stage": "development"/"stage": "release"/g\' out/prebuild/robopaint/package.json'));
     log('Installing RoboPaint dependencies...');
       log(fs.run('cd out/prebuild/robopaint/ && npm install --production --silent'));
     log("GO on a diet! Removing extra fat from build...");
