@@ -7,6 +7,7 @@ module.exports = function(grunt) {
   var log = grunt.log.writeln;
   var conf = grunt.config;
   var fs = require('./task-helpers')(grunt);
+  var fsp = require('fs-plus');
 
   grunt.registerTask('build-win', 'Build the release application for windows.', function(){
     log('Running electon-packager for win build...');
@@ -25,9 +26,10 @@ module.exports = function(grunt) {
 
     // If we're on Mac, go ahead and run appdmg
     if (process.platform === 'darwin') {
-      if (fs.stat(conf('appdmg.target.dest')) !== null) {
+      if (fsp.existsSync(conf('appdmg.target.dest'))) {
         fs.rm(conf('appdmg.target.dest'));
       }
+
       grunt.task.run('appdmg');
     }
   });
