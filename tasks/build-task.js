@@ -22,6 +22,14 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build-mac', 'Build the release application for OS X.', function(){
     grunt.task.run('electron:macbuild');
+
+    // If we're on Mac, go ahead and run appdmg
+    if (process.platform === 'darwin') {
+      if (fs.existsSync(conf('appdmg.target.dest'))) {
+        fs.rm(conf('appdmg.target.dest'));
+      }
+      grunt.task.run('appdmg');
+    }
   });
 
   grunt.registerTask('build-lin', 'Build the release application for Linux', function(){
