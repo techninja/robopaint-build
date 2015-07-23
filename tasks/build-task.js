@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 
     // If we're on Mac, go ahead and run appdmg
     if (process.platform === 'darwin') {
-      if (fs.accessSync(conf('appdmg.target.dest'))) {
+      if (fs.stat(conf('appdmg.target.dest')) !== null) {
         fs.rm(conf('appdmg.target.dest'));
       }
       grunt.task.run('appdmg');
