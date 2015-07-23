@@ -101,6 +101,7 @@ Fork & improve the project @ https://github.com/evil-mad/robopaint";
   // Load the plugins...
   grunt.loadNpmTasks('grunt-electron-installer');
   grunt.loadNpmTasks('grunt-electron');
+  grunt.loadNpmTasks('grunt-appdmg');
 
   // Load the tasks in '/tasks'
   grunt.loadTasks('tasks');
