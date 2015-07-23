@@ -11,7 +11,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build-win', 'Build the release application for windows.', function(){
     log('Running electon-packager for win build...');
-    grunt.task.run('electron:winbuild', 'build-win-icon');
+    grunt.task.run('pre-build', 'electron:winbuild', 'build-win-icon');
   });
 
   grunt.registerTask('build-win-icon', 'Change out the icon on the built windows exe.', function(){
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('build-mac', 'Build the release application for OS X.', function(){
-    grunt.task.run('electron:macbuild');
+    grunt.task.run('pre-build', 'electron:macbuild');
 
     // If we're on Mac, go ahead and run appdmg
     if (process.platform === 'darwin') {
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('build-lin', 'Build the release application for Linux', function(){
-    grunt.task.run('electron:linbuild');
+    grunt.task.run('pre-build', 'electron:linbuild');
   });
 
   grunt.registerTask('build-all', 'Build the release application for all platforms.', function(){
