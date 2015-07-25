@@ -13,6 +13,15 @@ module.exports = function(grunt) {
   grunt.registerTask('build-win', 'Build the release application for windows.', function(){
     log('Running electon-packager for win build...');
     grunt.task.run('pre-build', 'electron:winbuild', 'build-win-icon');
+
+    // If we're on Win32, go ahead and run create-windows-installer
+    if (process.platform === 'win32') {
+      if (fsp.existsSync(conf('create-windows-installer.outputDirectory'))) {
+        fs.rm(conf('create-windows-installer.outputDirectory'));
+      }
+
+      grunt.task.run('build-win-install');
+    }
   });
 
   grunt.registerTask('build-win-icon', 'Change out the icon on the built windows exe.', function(){
@@ -25,6 +34,18 @@ module.exports = function(grunt) {
 
     return rcedit(shellExePath, {icon: iconPath}, done);
   });
+
+  grunt.registerTask('build-win-install', 'Create Windows Installer.', function(){
+    grunt.task.run('create-windows-installer', 'build-win-install-post');
+  });
+
+  grunt.registerTask('build-win-install-post', 'Create Windows installer post cleanup.', function(){
+    log('Cleanup windows install')
+    var p = conf('create-windows-installer.outputDirectory');
+    fs.mv(p + 'Setup.exe', 'out/Install_RoboPaint_Win_v' + conf('robopaint.version') + '.exe');
+    fs.rm(p);
+  });
+
 
   grunt.registerTask('build-mac', 'Build the release application for OS X.', function(){
     grunt.task.run('pre-build', 'electron:macbuild');

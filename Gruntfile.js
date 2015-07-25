@@ -20,7 +20,8 @@ Fork & improve the project @ https://github.com/evil-mad/robopaint";
     robopaint: {
       buildDir: 'out',
       appDir: 'robopaint-linux-x64/resources/app',
-      shellAppDir: 'robopaint-linux-x64'
+      shellAppDir: 'robopaint-linux-x64',
+      version: version
     },
     electron: {
       macbuild: {
