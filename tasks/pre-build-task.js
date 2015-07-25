@@ -25,6 +25,9 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('pre-build-force', 'Fetch files for RP build.', function(){
+    var flatten = require('flatten-packages');
+    var done = this.async();
+
     log('Clearing destination: ./out/prebuild');
     fs.rm('out/prebuild');
     fs.mkdir('out/prebuild');
@@ -47,6 +50,10 @@ module.exports = function(grunt) {
       fs.rm(path + 'node_modules/cncserver/node_modules/serialport/build/serialport');
     log("Copying native build components for Windows, Linux & OSX...");
       fs.cp('native_builds/serialport/', 'out/prebuild/robopaint/node_modules/cncserver/node_modules/serialport/build/serialport/');
-    log('Prebuild complete!');
+    log("Flattening node modules path structure...");
+    flatten('out/prebuild/robopaint', {}, function(){
+      log('Prebuild complete!');
+      done();
+    });
   });
 };
