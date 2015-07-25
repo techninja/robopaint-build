@@ -8,6 +8,7 @@ module.exports = function(grunt) {
   var conf = grunt.config;
   var fs = require('./task-helpers')(grunt);
   var fsp = require('fs-plus');
+  var path = require('path');
 
   grunt.registerTask('build-win', 'Build the release application for windows.', function(){
     log('Running electon-packager for win build...');
@@ -16,9 +17,13 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build-win-icon', 'Change out the icon on the built windows exe.', function(){
     log('Changing windows executable icon...');
-    var changeIcon = 'wine ~/.wine/drive_c/utils/ResHacker/ResourceHacker.exe';
-    changeIcon+= ' -addoverwrite "RoboPaint.exe,robopaint.exe,..\..\resources\win\app.ico,ICONGROUP,MAINICON,0"';
-    log(fs.run('cd out/RoboPaint-win32-x64 && ' + changeIcon));
+
+    var done = this.async();
+    var shellExePath = path.join('out', 'RoboPaint-win32-x64', 'RoboPaint.exe');
+    var iconPath = path.resolve('resources', 'win', 'app.ico');
+    var rcedit = require('rcedit');
+
+    return rcedit(shellExePath, {icon: iconPath}, done);
   });
 
   grunt.registerTask('build-mac', 'Build the release application for OS X.', function(){
