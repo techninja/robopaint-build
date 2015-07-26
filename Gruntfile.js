@@ -46,24 +46,20 @@ Fork & improve the project @ https://github.com/evil-mad/robopaint";
           icon: 'resources/win/app.ico',
           version: electronVer,
           platform: 'win32',
-          arch: 'x64',
+          arch: 'x64,ia32',
           'app-version': version,
           overwrite: true,
-          prune: true
-        }
-      },
-      winbuild32: {
-        options: {
-          name: 'RoboPaint',
-          dir: 'out/prebuild/robopaint',
-          out: 'out',
-          icon: 'resources/win/app.ico',
-          version: electronVer,
-          platform: 'win32',
-          arch: 'ia32',
-          'app-version': version,
-          overwrite: true,
-          prune: true
+          prune: true,
+          'version-string': {
+            CompanyName: 'Evil Mad Scientist Laboratories',
+            LegalCopyright: 'Copyright (C) Evil Mad Science LLC. All rights reserved. Code under MIT free and open source license.',
+            FileDescription: 'RoboPaint',
+            OriginalFilename: 'RoboPaint.exe',
+            FileVersion: electronVer,
+            ProductVersion: version,
+            ProductName: 'RoboPaint',
+            InternalName: 'robopaint'
+          }
         }
       },
       linbuild: {

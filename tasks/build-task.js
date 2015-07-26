@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build-win', 'Build the release application for windows.', function(){
     log('Running electon-packager for win build...');
-    grunt.task.run('pre-build', 'electron:winbuild', 'electron:winbuild32', 'build-win-icon');
+    grunt.task.run('pre-build', 'electron:winbuild', 'build-win-icon');
 
     // If we're on Win32, go ahead and run create-windows-installer
     if (process.platform === 'win32') {
