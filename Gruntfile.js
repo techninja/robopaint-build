@@ -60,7 +60,7 @@ Fork & improve the project @ https://github.com/evil-mad/robopaint";
             FileVersion: electronVer,
             ProductVersion: version,
             ProductName: 'RoboPaint',
-            InternalName: 'robopaint'
+            InternalName: 'RoboPaint'
           }
         }
       },
