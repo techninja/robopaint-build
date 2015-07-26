@@ -35,7 +35,9 @@ Fork & improve the project @ https://github.com/evil-mad/robopaint";
           arch: 'x64',
           'app-version': version,
           overwrite: true,
-          prune: true
+          prune: true,
+          'app-bundle-id': 'robopaint-main',
+          'helper-bundle-id': 'robopaint-helper'
         }
       },
       winbuild: {
