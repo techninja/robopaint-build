@@ -33,6 +33,7 @@ Fork & improve the project @ https://github.com/evil-mad/robopaint";
           version: electronVer,
           platform: 'darwin',
           arch: 'x64',
+          'app-version': version,
           overwrite: true,
           prune: true
         }
@@ -46,6 +47,7 @@ Fork & improve the project @ https://github.com/evil-mad/robopaint";
           version: electronVer,
           platform: 'win32',
           arch: 'x64',
+          'app-version': version,
           overwrite: true,
           prune: true
         }
@@ -59,6 +61,7 @@ Fork & improve the project @ https://github.com/evil-mad/robopaint";
           version: electronVer,
           platform: 'linux',
           arch: 'x64',
+          'app-version': version,
           overwrite: true,
           prune: true
         }
