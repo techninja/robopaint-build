@@ -2,8 +2,6 @@ var path = require('path');
 var fs = require('fs-plus');
 var runas = null;
 
-var temp = require('temp');
-
 module.exports = function(grunt) {
   var cp, mkdir, ref, rm;
   ref = require('./task-helpers')(grunt), cp = ref.cp, mkdir = ref.mkdir, rm = ref.rm;
