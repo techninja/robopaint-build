@@ -95,12 +95,14 @@ Fork & improve the project @ https://github.com/evil-mad/robopaint";
     },
     'create-windows-installer': {
       64: {
+        iconUrl: "http://robopaint.tn42.com/app.ico",
         appDirectory: 'out/Robopaint-win32-x64',
         outputDirectory: 'out/winstall/',
         loadingGif: 'resources/win/install_anim.gif',
         authors: 'Evil Mad Scientist Labs Inc.'
       },
       32: {
+        iconUrl: "http://robopaint.tn42.com/app.ico",
         appDirectory: 'out/Robopaint-win32-ia32',
         outputDirectory: 'out/winstall32/',
         loadingGif: 'resources/win/install_anim.gif',
