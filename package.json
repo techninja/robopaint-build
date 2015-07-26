@@ -21,6 +21,6 @@
   },
   "optionalDependencies": {
     "grunt-appdmg": "^0.3.1",
-    "grunt-electron-installer": "~0.33.0"
+    "grunt-electron-installer": "https://github.com/techninja/grunt-electron-installer/tarball/multi-build-config"
   }
 }

@@ -52,6 +52,20 @@ Fork & improve the project @ https://github.com/evil-mad/robopaint";
           prune: true
         }
       },
+      winbuild32: {
+        options: {
+          name: 'RoboPaint',
+          dir: 'out/prebuild/robopaint',
+          out: 'out',
+          icon: 'resources/win/app.ico',
+          version: electronVer,
+          platform: 'win32',
+          arch: 'ia32',
+          'app-version': version,
+          overwrite: true,
+          prune: true
+        }
+      },
       linbuild: {
         options: {
           name: 'robopaint',
@@ -84,10 +98,18 @@ Fork & improve the project @ https://github.com/evil-mad/robopaint";
       }
     },
     'create-windows-installer': {
-      appDirectory: 'out/Robopaint-win32-x64',
-      outputDirectory: 'out/winstall/',
-      loadingGif: 'resources/win/install_anim.gif',
-      authors: 'Evil Mad Scientist Labs Inc.'
+      64: {
+        appDirectory: 'out/Robopaint-win32-x64',
+        outputDirectory: 'out/winstall/',
+        loadingGif: 'resources/win/install_anim.gif',
+        authors: 'Evil Mad Scientist Labs Inc.'
+      },
+      32: {
+        appDirectory: 'out/Robopaint-win32-ia32',
+        outputDirectory: 'out/winstall32/',
+        loadingGif: 'resources/win/install_anim.gif',
+        authors: 'Evil Mad Scientist Labs Inc.'
+      }
     },
     mkdeb: {
       section: 'graphics',
