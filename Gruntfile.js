@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-  var electronVer = '0.30.0'; // Electron build version
+  var electronVer = '0.30.1'; // Electron build version
 
   // App tags & description for Linux release packages.
   var appDesc = "Software for drawing robots, and your friendly painting robot kit, the WaterColorBot!\n\
