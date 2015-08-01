@@ -1,10 +1,6 @@
-out/*.zip
-out/*.dmg
-out/*.exe
-out/windows/*
-out/linux/*
-out/mac/*
+out/*
 out/prebuild/*
+*.DS_Store
 
 installers/windows/robopaint_i18n.nsi
 
