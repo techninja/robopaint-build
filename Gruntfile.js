@@ -15,7 +15,7 @@ Fork & improve the project @ https://github.com/evil-mad/robopaint";
     pkg: grunt.file.readJSON('package.json'),
     rpbuild: {
       repo: 'https://github.com/evil-mad/robopaint',
-      branch: 'electron'
+      branch: 'paperjs'
     },
     robopaint: {
       buildDir: 'out',
