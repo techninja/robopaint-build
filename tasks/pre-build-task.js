@@ -13,12 +13,12 @@ module.exports = function(grunt) {
 
   var branch = conf('rpbuild.branch');
   var ageIgnore = 1000 * 60 * 60; // 1000 milliseconds, 60 seconds, 60 minutes (one hour)
-  var now = new Date;
+  var now = new Date();
 
   grunt.registerTask('pre-build', 'Fetch files for RP build.', function(){
     try {
       if (fs.stat('out/prebuild').ctime.getTime() >  now.getTime() - ageIgnore) {
-        log('Pre-build looks less than an hour old, ignoring. Run pre-build-force to ignore.')
+        log('Pre-build looks less than an hour old, ignoring. Run pre-build-force to ignore.');
         return true;
       }
     } catch(e) {
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
             var file = 'out/prebuild/robopaint/package.json';
             jsonfile.writeFileSync(file, jsonfile.readFileSync(file, {
               reviver: function(k, v) {
-                if (k === 'stage' && v === 'development') {return 'release'}
+                if (k === 'stage' && v === 'development') {return 'release';}
                 return v;
               }
             }), {spaces: 2});
@@ -69,11 +69,13 @@ module.exports = function(grunt) {
               fs.rm(path + 'node_modules/cncserver/node_modules/serialport/build/serialport');
             log("Copying native build components for Windows, Linux & OSX...");
               fs.cp('native_builds/serialport/', 'out/prebuild/robopaint/node_modules/cncserver/node_modules/serialport/build/serialport/');
+            done();
+            /* // Flattening currently breaks the built app.
             log("Flattening node modules path structure...");
             flatten('out/prebuild/robopaint', {}, function(){
               log('Prebuild complete!');
               done();
-            });
+            });*/
         });
       });
   });
