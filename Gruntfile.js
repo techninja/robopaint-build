@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 See more about the WaterColorBot @ http://watercolorbot.com or\n\
 Fork & improve the project @ https://github.com/evil-mad/robopaint";
   var appTags = 'GNOME;GTK;Arts;SVG';
-  var version = '0.9.6'; // TODO: Load this from the package file
+  var version = '2.0.0-Beta.1'; // TODO: Load this from the package file
 
    // Project configuration.
   grunt.initConfig({
