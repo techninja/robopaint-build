@@ -58,7 +58,7 @@ module.exports = function(grunt) {
             }), {spaces: 2});
 
             log('Installing RoboPaint dependencies...');
-              log(fs.run('cd out/prebuild/robopaint/ && npm install --production --silent'));
+              log(fs.run('cd out/prebuild/robopaint/ && npm install --production --silent --force'));
             log("GO on a diet! Removing extra fat from build...");
               var path = 'out/prebuild/robopaint/';
               fs.rm(path + 'resources/modes/edit/method-editor/build/');
