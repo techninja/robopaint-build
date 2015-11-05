@@ -82,7 +82,7 @@ Fork & improve the project @ https://github.com/evil-mad/robopaint";
     appdmg: {
       options: {
         basepath: 'out/RoboPaint-darwin-x64',
-        title: 'RoboPaint!',
+        title: 'Install RoboPaint',
         icon: '../../resources/mac/app.icns',
         background: '../../resources/mac/dmg_back.png',
         'icon-size': 80,
