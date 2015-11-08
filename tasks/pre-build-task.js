@@ -67,6 +67,15 @@ module.exports = function(grunt) {
               fs.rm(path + 'resources/modes/edit/method-editor/test/');
             log("Copying native build components for Windows, Linux & OSX...");
             fs.cp('native_builds/', 'out/prebuild/robopaint/node_modules/cncserver/node_modules/serialport/build/Release/');
+
+            if (process.platform === 'win32') {
+              // Without flattening, we can't fully build installer on windows.
+              log("Flattening node modules path structure...");
+              flatten('out/prebuild/robopaint', {}, function(){
+                log('Prebuild complete!');
+                done();
+              });
+            }
         });
       });
   });
