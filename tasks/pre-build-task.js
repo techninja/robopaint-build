@@ -65,17 +65,8 @@ module.exports = function(grunt) {
               fs.rm(path + 'resources/modes/edit/method-editor/docs/');
               fs.rm(path + 'resources/modes/edit/method-editor/method-draw/');
               fs.rm(path + 'resources/modes/edit/method-editor/test/');
-              fs.rm(path + 'node_modules/cncserver/node_modules/serialport/build/Release');
-              fs.rm(path + 'node_modules/cncserver/node_modules/serialport/build/serialport');
             log("Copying native build components for Windows, Linux & OSX...");
-              fs.cp('native_builds/serialport/', 'out/prebuild/robopaint/node_modules/cncserver/node_modules/serialport/build/serialport/');
-            done();
-            /* // Flattening currently breaks the built app.
-            log("Flattening node modules path structure...");
-            flatten('out/prebuild/robopaint', {}, function(){
-              log('Prebuild complete!');
-              done();
-            });*/
+            fs.cp('native_builds/', 'out/prebuild/robopaint/node_modules/cncserver/node_modules/serialport/build/Release/');
         });
       });
   });
