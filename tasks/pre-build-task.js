@@ -75,6 +75,8 @@ module.exports = function(grunt) {
                 log('Prebuild complete!');
                 done();
               });
+            } else {
+              done();
             }
         });
       });
