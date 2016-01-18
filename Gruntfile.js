@@ -33,6 +33,7 @@ Fork & improve the project @ https://github.com/evil-mad/robopaint";
           version: electronVer,
           platform: 'darwin',
           arch: 'x64',
+          sign: 'Developer ID Application: Evil Mad Science LLC',
           'app-version': version,
           overwrite: true,
           prune: true,
