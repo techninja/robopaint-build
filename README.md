@@ -1,8 +1,11 @@
 robopaint-build
 ===============
 
-RoboPaint needs to support easy installs for users on all systems, so this
-repo is where all those files not living in the main robopaint repo.
-
 ## Looking for RoboPaint?
 Head over to the [main repo](https://github.com/techninja/robopaint).
+
+
+### UPDATE:
+This repository has become obsolete as RoboPaint now contains
+[its own far simpler and smaller build system](https://github.com/evil-mad/robopaint/pull/273).
+We keep this repository here for posterity, but it should no longer be needed for much of anything at all.
